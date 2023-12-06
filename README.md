@@ -1,5 +1,11 @@
 # lncRNARN
-Script, code and data for analyses in the paper "Quantitative estimates of the regulatory influence of long non-coding RNAs on global gene expression variation using TCGA breast cancer transcriptomic data".
+Xiaoman Xie [xiaoman2@illinois.edu] and Saurabh Sinha
+
+University of Illinois Urbana-Champaign
+
+This repository provides script and data to repeat analyses performed in the paper "Quantitative estimates of the regulatory influence of long non-coding RNAs on global gene expression variation using TCGA breast cancer transcriptomic data".
+
+![Method Overview](images/Figure1A.png)
 
 ### Data
 Expression profile downloaded from TCGA portal is in file ./data/TCGA_matadata.txt
