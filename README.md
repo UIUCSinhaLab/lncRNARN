@@ -29,13 +29,13 @@ Please first clone this repository from Github:
 ```
 git clone https://github.com/UIUCSinhaLab/lncRNARN.git
 ```
-The expression data is too large for inclusion in this repository. Please download the expression matrices from: [expression.zip](https://drive.google.com/file/d/1au0Pt4xWyxsqHtWWCciS17pcY1srjoDz/view?usp=sharing) After downloading, unzip the file. Place all files from the unzipped directory into the 'data' folder.
+The expression data is too large for inclusion in this repository. Please download the expression matrices from: [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing) After downloading, unzip the file. Place all files from the unzipped directory into the 'data' folder.
 
 ## Tutorial
 This section of the README is meant to walk a user through the process of recreating the lncRNA regulatory network reported in the paper.
 
 ### Download RNA-Seq data for TCGA-BRCA project
-Please note that the TCGA GDC portal no longer supports HTSeq counts data. The file ID used in this study is listed in [file](data/TCGA_matadata.txt). We have included the merged expression matrix in [expression.zip](https://drive.google.com/file/d/1au0Pt4xWyxsqHtWWCciS17pcY1srjoDz/view?usp=sharing). The preprocessing script used to create this expression matrix can be found [here](code/).
+Please note that the TCGA GDC portal no longer supports HTSeq counts data. The file ID used in this study is listed in [file](data/TCGA_matadata.txt). We have included the merged expression matrix in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing). The preprocessing script used to create this expression matrix can be found [here](code/).
 
 ### Data
 Expression profile downloaded from TCGA portal is in file ./data/TCGA_matadata.txt
