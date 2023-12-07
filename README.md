@@ -9,7 +9,6 @@ Georgia Institute of Technology
 1. [Introduction](#introduction)
 2. [Installation](#installation)
 3. [Tutorial](#tutorial)
-4. [Acknowledgments and credits](#acknowledgments-and-credits)
 
 
 ## Introduction
@@ -34,22 +33,34 @@ The expression data is too large for inclusion in this repository. Please downlo
 ## Tutorial
 This section of the README is meant to walk a user through the process of recreating the lncRNA regulatory network reported in the paper.
 
-### Download RNA-Seq data for TCGA-BRCA project
+### Download and preprocess TCGA RNA-Seq data
 Please note that the TCGA GDC portal no longer supports HTSeq counts data. The file ID used in this study is listed in [file](data/TCGA_metadata.txt). We have included the merged expression matrix in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing). The preprocessing script used to create this expression matrix can be found [here](code/).
 
-### Data
-Expression profile downloaded from TCGA portal is in file ./data/TCGA_matadata.txt
+### Step1: Regress out covariates
+Regress out impact of covariates (age, sex and race) on gene expression. This step will create a expression matrix same as CPMMatrix.noCov.txt in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing).
+```
+Rscript RegressOutCovariate.r
+```
 
-List of lncRNA Ensembl IDs used in the study: lncRNA.txt
+### Step2: Indentify and regress out significant TF regulators
+This step will create a expression matrix same as CPMMatrix.noCov.noTF.txt in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing).
 
-List of protein coding gene Ensembl IDs used in the study: ProteinCodingGene.txt
+```
+Rscript ElasticNetOLSTF.r
+```
 
-List of human transcription factors (TF): TF.txt
-
-List of RNA binding proteins (RBP): RBP.txt
+### Step3: Indentify significant lncRNA regulators
 
 
-### Code
-ElasticNetOLS_res.r: Script used to training and select the most significant lncRNA predictor.
+```
+Rscript ElasticNetOLSlncRNA.r
+```
 
-OLS_res_Condition.r: Script used to training the full model.
+### Step4: Using StepAIC to indentify significant TF:lncRNA and RBP:lncRNA interaction terms
+
+
+### Step5: OLS regression detect significant lncRNA regulators
+
+
+
+
