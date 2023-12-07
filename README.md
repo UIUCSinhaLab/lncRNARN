@@ -72,6 +72,11 @@ Rscript ElasticNetOLS_RBP_lncRNA.r
 ```
 
 ### Step6: OLS regression detect significant lncRNA regulators
+This step results in the lncRNA-mRNA regulatory edges as in [FinalNetwork.txt](data/FinalNetwork.txt) and in Supplementary Table S18.
+
+```
+Rscript OLS_res_Condition.r
+```
 
 
 
