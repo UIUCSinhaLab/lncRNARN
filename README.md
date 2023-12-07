@@ -35,7 +35,7 @@ The expression data is too large for inclusion in this repository. Please downlo
 This section of the README is meant to walk a user through the process of recreating the lncRNA regulatory network reported in the paper.
 
 ### Download RNA-Seq data for TCGA-BRCA project
-Please note that the TCGA GDC portal no longer supports HTSeq counts data. The file ID used in this study is listed in [file](data/TCGA_matadata.txt). We have included the merged expression matrix in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing). The preprocessing script used to create this expression matrix can be found [here](code/).
+Please note that the TCGA GDC portal no longer supports HTSeq counts data. The file ID used in this study is listed in [file](data/TCGA_metadata.txt). We have included the merged expression matrix in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing). The preprocessing script used to create this expression matrix can be found [here](code/).
 
 ### Data
 Expression profile downloaded from TCGA portal is in file ./data/TCGA_matadata.txt
