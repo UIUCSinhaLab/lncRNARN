@@ -43,23 +43,35 @@ Rscript RegressOutCovariate.r
 ```
 
 ### Step2: Indentify and regress out significant TF regulators
-This step will create a expression matrix same as CPMMatrix.noCov.noTF.txt in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing).
+ElasticNet regression was used to select the top 10 most significant TF regulators for each protein. This step will create a expression matrix (res.txt) same as CPMMatrix.noCov.noTF.txt in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing), a list of significant TF regulators for each gene as in [TFRegulators.txt](data/TFRegulators.txt), and training and test performance with 5-fold cross-validation as in [CVPerformanceTF.txt](data/CVPerformanceTF.txt)
 
 ```
 Rscript ElasticNetOLSTF.r
 ```
 
 ### Step3: Indentify significant lncRNA regulators
-
+ElasticNet regression was used to select the top 10 most significant lncRNA regulators for each protein. This step will generate a list of significant lncRNA regulators  for each gene as in [lncRNARegulators.txt](data/lncRNARegulators.txt), and training and test performance with 5-fold cross-validation as in [CVPerformance_lncRNA.txt](data/CVPerformance_lncRNA.txt)
 
 ```
 Rscript ElasticNetOLSlncRNA.r
 ```
 
-### Step4: Using StepAIC to indentify significant TF:lncRNA and RBP:lncRNA interaction terms
+### Step4: Indentify significant RBP regulators
+ElasticNet regression was used to select the top 10 most significant RBP regulators for each protein. This step will generate a list of significant RBP regulators  for each gene as in [RBPRegulators.txt](data/RBPRegulators.txt), and training and test performance with 5-fold cross-validation as in [CVPerformanceRBP.txt](data/CVPerformanceRBP.txt)
 
+```
+Rscript ElasticNetOLSRBP.r
+```
 
-### Step5: OLS regression detect significant lncRNA regulators
+### Step5: Using StepAIC to indentify significant TF:lncRNA and RBP:lncRNA interaction terms
+Considering significant lncRNA, TF and RBP regulators detected from the previous steps, AIC was used to identify significant lncRNA-TF and lncRNA-RBP interaction terms. This step will generate a list of significant interaction terms as in [TFInteractions.txt](data/TFInteractions.txt) and [RBPInteractions.txt](data/RBPInteractions.txt).
+
+```
+Rscript ElasticNetOLS_TF_lncRNA.r
+Rscript ElasticNetOLS_RBP_lncRNA.r
+```
+
+### Step6: OLS regression detect significant lncRNA regulators
 
 
 
