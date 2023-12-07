@@ -27,7 +27,7 @@ In this study, we analyzed transcriptome data of 13,963 protein-coding genes and
 ## Installation
 Please first clone this repository from Github: 
 ```
-git clone https://github.com/UIUCSinhaLab/VarSAn.git
+git clone https://github.com/UIUCSinhaLab/lncRNARN.git
 ```
 The expression data is too large for inclusion in this repository. Please download the expression matrices from: [expression.zip](https://drive.google.com/file/d/1au0Pt4xWyxsqHtWWCciS17pcY1srjoDz/view?usp=sharing) After downloading, unzip the file. Place all files from the unzipped directory into the 'data' folder.
 
