@@ -14,7 +14,7 @@ In this work, we analyzed the transcriptome data for 13,963 protein coding genes
 Combining the results of the above-mentioned analyses, we finally created a lncRNA-mRNA regulatory network with edges being lncRNA-mRNA connections that are strongly supported by the above models and by additional evidence of a plausible regulatory mechanism.
 
 
-![Method Overview](images/Figure1A.png)
+![Method Overview](image/Figure1A.png)
 
 ### Data
 Expression profile downloaded from TCGA portal is in file ./data/TCGA_matadata.txt
