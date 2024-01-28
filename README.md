@@ -39,7 +39,7 @@ Please note that the TCGA GDC portal no longer supports HTSeq counts data. The f
 ### Step1: Regress out covariates
 Regress out impact of covariates (age, sex and race) on gene expression. This step will create a expression matrix same as CPMMatrix.noCov.txt in [ExpMatrix.zip](https://drive.google.com/file/d/1jV-kezgQVlZndelWc0N6gYV3i0kMjM4R/view?usp=sharing).
 ```
-Rscript RegressOutCovariate.r
+Rscript RegressOutCovariate.r CPMMatrix.noCov.txt
 ```
 
 ### Step2: Indentify and regress out significant TF regulators
