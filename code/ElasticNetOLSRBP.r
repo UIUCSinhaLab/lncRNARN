@@ -17,7 +17,7 @@ res <- as.data.frame(fread("../data/CPMMatrix.noCov.noTF.txt",header=F))
 rownames(res) <- res[,1]
 res <- res[,-1]
 
-lncrna_id <- read.table("../data/lncRNA.txt",header=FALSE)[,1]
+lncrna_id <- read.table("../data/RBP.txt",header=FALSE)[,1]
 pcrna_id <- read.table("../data/ProteinCodingGene.txt",header=FALSE)[,1]
 
 lncrna <- t(data[(rownames(data) %in% lncrna_id),])
@@ -60,7 +60,7 @@ for ( i in 1:dim(mrna)[[1]]){
 	all.pred <- predict(all.fit,s=all.fit$lambda.min,newx=lncrna[,!(colnames(lncrna) %in% colnames(y))])
 	all.cc <- cor(y,all.pred)
 	row <- cbind(row,all.cc)
-	write.table(rbind(row),"CVPerformance_lncRNA.txt",quote=FALSE,row.names=FALSE,col.names=FALSE,sep="\t",append=T)
+	write.table(rbind(row),"CVPerformanceRBP.txt",quote=FALSE,row.names=FALSE,col.names=FALSE,sep="\t",append=T)
 	
 	c<-coef(all.fit,s='lambda.min',exact=TRUE)
 	inds<-which(c!=0)
@@ -89,7 +89,7 @@ for ( i in 1:dim(mrna)[[1]]){
 	if(length(var)>0){
 	for (n in 1:length(var)){
 		tmp <- c(colnames(y),var[n],p[n])
-		write.table(rbind(tmp),"lncRNARegulators.txt",quote=FALSE,row.names=FALSE,col.names=FALSE,sep="\t",append=T)
+		write.table(rbind(tmp),"RBPRegulators.txt",quote=FALSE,row.names=FALSE,col.names=FALSE,sep="\t",append=T)
 	}
 	}
 
